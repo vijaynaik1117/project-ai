@@ -1,0 +1,9 @@
+resources: [../../base]
+namespace: dev
+images: [{name: vijaynaik1117/project-ai, newTag: v2}]
+patches:
+  - target: {kind: Deployment, name: project-ai}
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
